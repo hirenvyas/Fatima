@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DemoList.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DemoList"
+    Title="Fatima">
+    <!--<ContentPage.ToolbarItems>
+    -->
+    <!--<ToolbarItem
+            Name="Add"
+            Clicked="Add_Clicked"
+            Icon="ic_action_batch.png"
+            Order="Primary"
+            Priority="0" />-->
+    <!--
+
+    </ContentPage.ToolbarItems>-->
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <ListView
+                x:Name="UserData"
+                Margin="10,20"
+                SeparatorColor="Red">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnSpacing="5,2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    FontAttributes="Bold"
+                                    FontSize="Large"
+                                    Text="{Binding Id}"
+                                    TextColor="Black"
+                                    VerticalTextAlignment="Center" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    FontSize="Medium"
+                                    Text="{Binding Name}"
+                                    TextColor="Black"
+                                    VerticalTextAlignment="Center" />
+                                <Image
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Source="ic_cancel.png"
+                                    VerticalOptions="Center">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            x:Name="Delete"
+                                            CommandParameter="{Binding .}"
+                                            NumberOfTapsRequired="1"
+                                            Tapped="Delete_Tapped_Async" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout
+                Margin="2"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="End">
+                <Entry
+                    x:Name="MyName"
+                    HorizontalOptions="FillAndExpand"
+                    Placeholder="Entr your name" />
+                <Button
+                    x:Name="Add"
+                    BackgroundColor="Green"
+                    Clicked="Add_Clicked"
+                    HorizontalOptions="End"
+                    Text="ADD"
+                    TextColor="White" />
+            </StackLayout>
+        </StackLayout>
+
+
+    </ContentPage.Content>
+
+</ContentPage>
